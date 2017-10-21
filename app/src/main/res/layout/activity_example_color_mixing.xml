@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:id="@+id/layout_options"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="20dp">
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/palette"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:button_labelText="Palette"
+            app:button_labelStyle="bold"
+            app:button_labelSize="17"
+            app:button_backgroundColor="@color/btnColor"
+            app:button_duration="250"
+            app:button_scale="0.8"/>
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/gallery"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:button_labelText="Gallery"
+            app:button_labelStyle="bold"
+            app:button_labelSize="17"
+            app:button_backgroundColor="@color/btnColor"
+            app:button_duration="250"
+            app:button_scale="0.8"/>
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/mixing"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:button_labelText="Mix"
+            app:button_labelStyle="bold"
+            app:button_labelSize="17"
+            app:button_backgroundColor="@color/btnColor"
+            app:button_duration="250"
+            app:button_scale="0.8"/>
+
+    </LinearLayout>
+
+    <com.skydoves.multicolorpicker.MultiColorPickerView
+        android:id="@+id/multiColorPickerView"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/layout_options"
+        android:layout_marginTop="10dp"
+        android:layout_weight="6"
+        android:layout_gravity="center"
+        app:palette="@drawable/palette" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/multiColorPickerView"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="9">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/textView0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="color1"
+                android:textColor="@color/colorAccent"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:id="@+id/color1"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView0"
+                android:orientation="horizontal"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="color2"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:id="@+id/color2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView1"
+                android:background="@android:color/white"
+                android:orientation="horizontal"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="mixed"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:id="@+id/mixed"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView2"
+                android:background="@android:color/white"
+                android:orientation="horizontal"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
