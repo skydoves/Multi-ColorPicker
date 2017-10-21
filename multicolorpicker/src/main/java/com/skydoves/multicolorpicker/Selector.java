@@ -34,21 +34,21 @@ public class Selector {
     private ColorListener colorListener;
     private SelectorListener selectorListener;
 
-    public Selector(ImageView selector, ColorListener colorListener) {
+    protected Selector(ImageView selector, ColorListener colorListener) {
         this.selector = selector;
         this.colorListener = colorListener;
     }
 
-    public void setPoint(int x, int y) {
+    protected void setPoint(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public void setColor(int color) {
+    protected void setColor(int color) {
         this.color = color;
     }
 
-    public void setSelectorListener(SelectorListener selectorListener) {
+    protected void setSelectorListener(SelectorListener selectorListener) {
         this.selectorListener = selectorListener;
     }
 

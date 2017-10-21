@@ -5,9 +5,9 @@ publish {
     userOrg = 'devmagician'
     groupId = 'com.github.skydoves'
     artifactId = 'multicolorpicker'
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     desc = 'This is Multi-ColorPicker by skydoves'
-    website = 'https://github.com/skydoves/MultiColorPicker'
+    website = 'https://github.com/skydoves/Multi-ColorPicker'
     issueTracker = "${website}/issues"
     repository = "${website}.git"
 }
