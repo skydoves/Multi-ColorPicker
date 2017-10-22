@@ -1,11 +1,11 @@
 # Multi-ColorPicker
 You can get colors from your gallery pictures or custom images just using touch with multi-selectors.
 
-![111](https://user-images.githubusercontent.com/24237865/31852635-fc629cea-b6b5-11e7-8353-bd7840baee6d.jpg)
+![example1](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/example1.jpg)
 
 ## Examples
-![222](https://user-images.githubusercontent.com/24237865/31852675-cf2d59bc-b6b6-11e7-8dab-592990789f78.jpg)
-![333](https://user-images.githubusercontent.com/24237865/31852676-cf57664e-b6b6-11e7-9268-55b7dcaea994.jpg)
+![example2-1](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/example2-1.jpg)
+![example2-2](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/example2-2.jpg)
 
 ## Including in your project
 #### build.gradle
