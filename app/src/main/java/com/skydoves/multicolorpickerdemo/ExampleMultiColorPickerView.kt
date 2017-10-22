@@ -7,6 +7,11 @@ import com.skydoves.multicolorpicker.ColorEnvelope
 import com.skydoves.multicolorpicker.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_multi_color_picker_view_example.*
 
+/**
+ * Created by skydoves on 2017-10-21.
+ * Copyright (c) 2017 skydoves rights reserved.
+ */
+
 class ExampleMultiColorPickerView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

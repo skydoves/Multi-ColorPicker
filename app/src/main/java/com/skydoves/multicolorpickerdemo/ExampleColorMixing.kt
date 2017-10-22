@@ -12,6 +12,10 @@ import com.skydoves.multicolorpicker.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_example_color_mixing.*
 import java.io.FileNotFoundException
 
+/**
+ * Created by skydoves on 2017-10-21.
+ * Copyright (c) 2017 skydoves rights reserved.
+ */
 
 class ExampleColorMixing : AppCompatActivity() {
 
