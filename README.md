@@ -69,24 +69,24 @@ multiColorPickerView.addSelector(selectorDrawable, new ColorListener() {
 #### MultiColorPickerView Methods
 Methods | Return | Description
 --- | --- | ---
-addSelector(Drawable drawable, ColorListener listener) | Selector | adding a Selector and returning it
-setPaletteDrawable(Drawable drawable) | void | changing palette's drawable
-getMixedColor(Float ratio(0~1)) | void | returning mixed color from selectors seleted color
-setSelectedAlpha(Float ratio(0~1) | void | setting active selector's alpha
-getSelectorsSize() | int | returning selectors size
+addSelector(Drawable drawable, ColorListener listener) | Selector | adds a Selector and returning it
+setPaletteDrawable(Drawable drawable) | void | changes palette's drawable
+getMixedColor(Float ratio(0~1)) | void | returns mixed color from selectors seleted color
+setSelectedAlpha(Float ratio(0~1) | void | sets active selector's alpha
+getSelectorsSize() | int | returns selectors size
 
 #### Selector Methods
 Methods | Return | Description
 --- | --- | ---
-getX() | int | returning selector's X axis
-getY() | int | returning selector's Y axis
-getColor() | int | returing the selector's selected color
-getColorHtml() | String | returing the selector's selected color html code
-getColorRGB() | int[3] | returing the selector's selected color rgb array
-onMove(int x, int y) | void | moving the selector's point
-onMoveCenter() | void | moving the selector's point to center
-onSelect() | void | selecting point at selector's position (used with onMove())
-onSelect(int x, int y) | void | moving and selecting point
+getX() | int | returns selector's X axis
+getY() | int | returns selector's Y axis
+getColor() | int | returns the selector's selected color
+getColorHtml() | String | returns the selector's selected color html code
+getColorRGB() | int[3] | returns the selector's selected color rgb array
+onMove(int x, int y) | void | moves the selector's point
+onMoveCenter() | void | moves the selector's point to center
+onSelect() | void | selects point at selector's position (used with onMove())
+onSelect(int x, int y) | void | moves and selects point
 
 # License
 ```xml
