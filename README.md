@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.skydoves:multicolorpicker:1.0.3'
+  compile 'com.github.skydoves:multicolorpicker:1.0.5'
 }
 ```
 
@@ -24,7 +24,7 @@ dependencies {
 <dependency>
   <groupId>com.github.skydoves</groupId>
   <artifactId>multicolorpicker</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.5</version>
 </dependency>
 ```
 
@@ -74,6 +74,9 @@ setPaletteDrawable(Drawable drawable) | void | changes palette's drawable
 getMixedColor(Float ratio(0~1)) | void | returns mixed color from selectors seleted color
 setSelectedAlpha(Float ratio(0~1) | void | sets active selector's alpha
 getSelectorsSize() | int | returns selectors size
+setFlagView(FlagView flagView) | void | sets a FlagView on colorpicker
+setFlagMode(FlagMode flagmode) | void | sets FlagMode(Always, Last, None)
+setFlagFlipable(boolean flipable) | void | sets flag's flip-able when flag go over top boundary
 
 #### Selector Methods
 Methods | Return | Description
