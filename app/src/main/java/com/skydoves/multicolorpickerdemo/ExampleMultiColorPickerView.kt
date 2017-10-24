@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.skydoves.multicolorpicker.ColorEnvelope
+import com.skydoves.multicolorpicker.MultiColorPickerView
 import com.skydoves.multicolorpicker.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_multi_color_picker_view_example.*
 
@@ -23,6 +24,7 @@ class ExampleMultiColorPickerView : AppCompatActivity() {
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector1_colorListener)
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector2_colorListener)
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector3_colorListener)
+        multiColorPickerView.setFlagView(CustomFlag(this, R.layout.layout_flag))
     }
 
     private val selector0_colorListener = object : ColorListener {

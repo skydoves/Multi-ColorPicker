@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.skydoves.multicolorpicker.ColorEnvelope
+import com.skydoves.multicolorpicker.MultiColorPickerView
 import com.skydoves.multicolorpicker.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_example_color_mixing.*
 import java.io.FileNotFoundException
@@ -28,6 +29,9 @@ class ExampleColorMixing : AppCompatActivity() {
 
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector0_colorListener)
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector1_colorListener)
+        multiColorPickerView.setFlagView(CustomFlag(this, R.layout.layout_flag))
+        multiColorPickerView.setFlagMode(MultiColorPickerView.FlagMode.LAST)
+        multiColorPickerView.setFlagFlipable(false)
         palette.setOnClickListener {
             if(flag) {
                 flag = false

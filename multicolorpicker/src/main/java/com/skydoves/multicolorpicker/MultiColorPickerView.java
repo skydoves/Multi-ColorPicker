@@ -53,6 +53,12 @@ public class MultiColorPickerView extends FrameLayout {
 
     private float alpha = 0.5f;
 
+    private FlagView flagView;
+
+    public enum FlagMode {ALWAYS, LAST, NONE}
+    private FlagMode flagMode = FlagMode.ALWAYS;
+    private boolean flipable = true;
+
     public MultiColorPickerView(Context context) {
         super(context);
     }
@@ -129,10 +135,14 @@ public class MultiColorPickerView extends FrameLayout {
                 if (mainSelector != null) {
                     switch (event.getAction()) {
                         case MotionEvent.ACTION_DOWN:
+                            if(flagView != null && flagMode == FlagMode.LAST) flagView.gone();
                             mainSelector.getSelector().setPressed(true);
                             return onTouchReceived(event);
                         case MotionEvent.ACTION_MOVE:
                             mainSelector.getSelector().setPressed(true);
+                            return onTouchReceived(event);
+                        case MotionEvent.ACTION_UP :
+                            if(flagView != null && flagMode == FlagMode.LAST) flagView.visible();
                             return onTouchReceived(event);
                         default:
                             mainSelector.getSelector().setPressed(false);
@@ -149,10 +159,27 @@ public class MultiColorPickerView extends FrameLayout {
         mainSelector.setColor(getColorFromBitmap(snapPoint.x, snapPoint.y));
 
         if(getColor() != Color.TRANSPARENT) {
-            mainSelector.getSelector().setX(snapPoint.x - (mainSelector.getSelector().getMeasuredWidth() / 2));
-            mainSelector.getSelector().setY(snapPoint.y - (mainSelector.getSelector().getMeasuredHeight() / 2));
+            Point centerPoint = getCenterPoint(snapPoint.x, snapPoint.y);
+            mainSelector.getSelector().setX(centerPoint.x);
+            mainSelector.getSelector().setY(centerPoint.y);
             mainSelector.setPoint(snapPoint.x, snapPoint.y);
             fireColorListener(getColor());
+
+            if (flagView != null && (flagMode == FlagMode.ALWAYS || flagMode == FlagMode.LAST)) {
+                if(centerPoint.y - flagView.getHeight() > 0) {
+                    flagView.setRotation(0);
+                    if (flagView.getVisibility() == View.GONE) flagView.visible();
+                    flagView.setX(centerPoint.x - flagView.getWidth() / 2 + mainSelector.getSelector().getWidth() / 2);
+                    flagView.setY(centerPoint.y - flagView.getHeight());
+                    flagView.onRefresh(getColorEnvelope());
+                } else if(flipable) {
+                    flagView.setRotation(180);
+                    if (flagView.getVisibility() == View.GONE) flagView.visible();
+                    flagView.setX(centerPoint.x - flagView.getWidth() / 2 + mainSelector.getSelector().getWidth() / 2);
+                    flagView.setY(centerPoint.y + flagView.getHeight() - mainSelector.getSelector().getHeight() / 2);
+                    flagView.onRefresh(getColorEnvelope());
+                }
+            }
             return true;
         } else
             return false;
@@ -184,8 +211,12 @@ public class MultiColorPickerView extends FrameLayout {
 
     private void fireColorListener(int color) {
         if (mainSelector.getColorListener() != null) {
-            mainSelector.getColorListener().onColorSelected(new ColorEnvelope(color, getColorHtml(), getColorRGB()));
+            mainSelector.getColorListener().onColorSelected(getColorEnvelope());
         }
+    }
+
+    private Point getCenterPoint(int x, int y) {
+       return new Point(x - (mainSelector.getSelector().getMeasuredWidth() / 2), y - (mainSelector.getSelector().getMeasuredHeight() / 2));
     }
 
     private int getColor() {
@@ -324,6 +355,12 @@ public class MultiColorPickerView extends FrameLayout {
             addView(selectorList.get(i).getSelector());
             selectorList.get(i).onMoveCenter();
         }
+
+        addView(flagView);
+    }
+
+    public ColorEnvelope getColorEnvelope() {
+        return new ColorEnvelope(getColor(), getColorHtml(), getColorRGB());
     }
 
     public int getMixedColor(float ratio) {
@@ -331,6 +368,20 @@ public class MultiColorPickerView extends FrameLayout {
         if(selectorList.size() == 0) return 0;
         if(selectorList.size() == 1) return selectorList.get(0).getColor();
         return mixColor(selectorList.size(), selectorList.get(0).getColor(), ratio);
+    }
+
+    public void setFlagView(FlagView flagView) {
+        flagView.gone();
+        addView(flagView);
+        this.flagView = flagView;
+    }
+
+    public void setFlagFlipable(boolean flipable) {
+        this.flipable = flipable;
+    }
+
+    public void setFlagMode(FlagMode flagMode) {
+        this.flagMode = flagMode;
     }
 
     private int mixColor(int index, int mixedColor, float ratio) {
