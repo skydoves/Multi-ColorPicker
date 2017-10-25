@@ -1,10 +1,10 @@
 # Multi-ColorPicker
 You can get colors from your gallery pictures or custom images just using touch with multi-selectors.
 
-![example1](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/gif0.gif)
+![gif0](https://user-images.githubusercontent.com/24237865/32027700-71c27e7a-ba25-11e7-80ab-37abe1a3f4b1.gif)
 
 ## Examples
-![example2-1](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/gif1.gif)
+![gif1](https://user-images.githubusercontent.com/24237865/32027699-7196b664-ba25-11e7-845c-31e8fede6f63.gif)
 ![example2-2](https://github.com/skydoves/Multi-ColorPicker/blob/master/screenshot/example2-2.jpg)
 
 ## Including in your project
