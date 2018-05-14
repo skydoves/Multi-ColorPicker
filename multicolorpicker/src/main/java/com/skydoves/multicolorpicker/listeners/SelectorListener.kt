@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2017 skydoves
  *
@@ -15,28 +14,13 @@
  * limitations under the License.
  */
 
-package com.skydoves.multicolorpicker;
+package com.skydoves.multicolorpicker.listeners
 
-public class ColorEnvelope {
-    private int color;
-    private String htmlCode;
-    private int[] rgb;
+import com.skydoves.multicolorpicker.Selector
 
-    public ColorEnvelope(int color, String htmlCode, int[] rgb) {
-        this.color = color;
-        this.htmlCode = htmlCode;
-        this.rgb = rgb;
-    }
-
-    public int getColor() {
-        return this.color;
-    }
-
-    public String getHtmlCode() {
-        return this.htmlCode;
-    }
-
-    public int[] getRgb() {
-        return this.rgb;
-    }
+interface SelectorListener {
+    fun onMove(selector: Selector, x: Int, y: Int)
+    fun onMoveCenter(selector: Selector)
+    fun onSelect(selector: Selector)
+    fun onSelect(selector: Selector, x: Int, y: Int)
 }

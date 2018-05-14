@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.skydoves.multicolorpicker.ColorEnvelope
 import com.skydoves.multicolorpicker.MultiColorPickerView
 import com.skydoves.multicolorpicker.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_example_color_mixing.*
@@ -35,11 +36,11 @@ class ExampleColorMixing : AppCompatActivity() {
             when(flag) {
                 true -> {
                     flag = false
-                    multiColorPickerView.setPaletteDrawable(ContextCompat.getDrawable(this, R.drawable.watercolor))
+                    multiColorPickerView.setPaletteDrawable(ContextCompat.getDrawable(this, R.drawable.watercolor)!!)
                 }
                 false -> {
                     flag = true
-                    multiColorPickerView.setPaletteDrawable(ContextCompat.getDrawable(this, R.drawable.palette))
+                    multiColorPickerView.setPaletteDrawable(ContextCompat.getDrawable(this, R.drawable.palette)!!)
                 }
             }
         }
@@ -53,12 +54,16 @@ class ExampleColorMixing : AppCompatActivity() {
         mixing.setOnClickListener { mixed.setBackgroundColor(multiColorPickerView.getMixedColor(0.6f)) }
     }
 
-    private val colorListener0 = ColorListener {
-        envelope -> color1.setBackgroundColor(envelope.color)
+    private val colorListener0 = object: ColorListener {
+        override fun onColorSelected(envelope: ColorEnvelope) {
+            color1.setBackgroundColor(envelope.color)
+        }
     }
 
-    private val colorListener1 = ColorListener {
-        envelope -> color2.setBackgroundColor(envelope.color)
+    private val colorListener1 = object: ColorListener {
+        override fun onColorSelected(envelope: ColorEnvelope) {
+            color2.setBackgroundColor(envelope.color)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

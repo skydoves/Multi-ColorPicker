@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2017 skydoves
  *
@@ -15,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.skydoves.multicolorpicker.listeners;
+package com.skydoves.multicolorpicker.listeners
 
-import com.skydoves.multicolorpicker.ColorEnvelope;
+import com.skydoves.multicolorpicker.ColorEnvelope
 
-public interface ColorListener {
-    void onColorSelected(ColorEnvelope envelope);
+interface ColorListener {
+    fun onColorSelected(envelope: ColorEnvelope)
 }

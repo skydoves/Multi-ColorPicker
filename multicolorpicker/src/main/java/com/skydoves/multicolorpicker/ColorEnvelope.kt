@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2017 skydoves
  *
@@ -15,13 +14,6 @@
  * limitations under the License.
  */
 
-package com.skydoves.multicolorpicker.listeners;
+package com.skydoves.multicolorpicker
 
-import com.skydoves.multicolorpicker.Selector;
-
-public interface SelectorListener {
-    void onMove(Selector selector, int x, int y);
-    void onMoveCenter(Selector selector);
-    void onSelect(Selector selector);
-    void onSelect(Selector selector, int x, int y);
-}
+data class ColorEnvelope(val color: Int, val htmlCode: String, val rgb: IntArray)
