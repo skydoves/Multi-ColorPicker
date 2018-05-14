@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.github.skydoves:multicolorpicker:1.0.6"
+  compile "com.github.skydoves:multicolorpicker:1.0.7"
 }
 ```
 
@@ -24,7 +24,7 @@ dependencies {
 <dependency>
   <groupId>com.github.skydoves</groupId>
   <artifactId>multicolorpicker</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
