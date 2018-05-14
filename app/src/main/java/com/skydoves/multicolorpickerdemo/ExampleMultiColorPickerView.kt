@@ -20,6 +20,7 @@ class ExampleMultiColorPickerView : AppCompatActivity() {
         setContentView(R.layout.activity_multi_color_picker_view_example)
 
         multiColorPickerView.setSelectedAlpha(0.6f)
+        multiColorPickerView.setPaletteDrawable(ContextCompat.getDrawable(this, R.drawable.watercolor1))
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector0_colorListener)
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector1_colorListener)
         multiColorPickerView.addSelector(ContextCompat.getDrawable(this, R.drawable.wheel), selector2_colorListener)

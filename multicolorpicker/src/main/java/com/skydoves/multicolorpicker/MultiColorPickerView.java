@@ -356,7 +356,8 @@ public class MultiColorPickerView extends FrameLayout {
             selectorList.get(i).onMoveCenter();
         }
 
-        addView(flagView);
+        if(flagView != null)
+            addView(flagView);
     }
 
     public ColorEnvelope getColorEnvelope() {
