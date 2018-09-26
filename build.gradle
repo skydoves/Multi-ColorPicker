@@ -1,8 +1,12 @@
 
 buildscript {
-    ext.kotlin_version = '1.2.30'
-    ext.bintray_version = '0.8.1'
-    ext.dokka_version = '0.9.16'
+
+    ext {
+        supportLibrary = '28.0.0'
+        kotlin_version = '1.2.30'
+        bintray_version = '0.8.1'
+        dokka_version = '0.9.16'
+    }
 
     repositories {
         google()
@@ -10,7 +14,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
         classpath "com.novoda:bintray-release:$bintray_version"

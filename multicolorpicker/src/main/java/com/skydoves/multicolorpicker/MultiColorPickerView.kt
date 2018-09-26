@@ -32,6 +32,7 @@ import com.skydoves.multicolorpicker.listeners.ColorListener
 import com.skydoves.multicolorpicker.listeners.SelectorListener
 import java.util.*
 
+@Suppress("WeakerAccess", "unchecked", "unused", "deprecated")
 class MultiColorPickerView : FrameLayout {
 
     private var palette: ImageView? = null
@@ -211,7 +212,7 @@ class MultiColorPickerView : FrameLayout {
                             it.onRefresh(colorEnvelope)
                         } else if (flipable) {
                             it.rotation = 180f
-                            if (flagView!!.visibility == View.GONE) flagView!!.visible()
+                            if (it.visibility == View.GONE) it.visible()
                             it.x = (centerPoint.x - it.width / 2 + mainSelector!!.selector.width / 2).toFloat()
                             it.y = (centerPoint.y + it.height - mainSelector!!.selector.height / 2).toFloat()
                             it.onRefresh(colorEnvelope)
@@ -238,7 +239,13 @@ class MultiColorPickerView : FrameLayout {
                 mappedPoints[0] < palette!!.drawable.intrinsicWidth && mappedPoints[1] < palette!!.drawable.intrinsicHeight) {
 
             invalidate()
-            return (palette!!.drawable as BitmapDrawable).bitmap.getPixel(mappedPoints[0].toInt(), mappedPoints[1].toInt())
+
+            val rect = palette!!.drawable.bounds
+            val scaleX = mappedPoints[0] / rect.height()
+            val x1 = (scaleX * (palette!!.drawable as BitmapDrawable).bitmap.height).toInt()
+            val scaleY = mappedPoints[1] / rect.width()
+            val y1 = (scaleY * (palette!!.drawable as BitmapDrawable).bitmap.width).toInt()
+            return (palette!!.drawable as BitmapDrawable).bitmap.getPixel(x1, y1)
         }
         return 0
     }
@@ -253,6 +260,7 @@ class MultiColorPickerView : FrameLayout {
         return Point(x - mainSelector!!.selector.measuredWidth / 2, y - mainSelector!!.selector.measuredHeight / 2)
     }
 
+    @SuppressWarnings("ClickableViewAccessibility")
     fun addSelector(drawable: Drawable?, colorListener: ColorListener?): Selector? {
         if (drawable == null || colorListener == null) return null
 

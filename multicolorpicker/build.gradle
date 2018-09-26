@@ -7,7 +7,7 @@ publish {
     userOrg = 'devmagician'
     groupId = 'com.github.skydoves'
     artifactId = 'multicolorpicker'
-    publishVersion = '1.0.7'
+    publishVersion = '1.0.8'
     desc = 'This is Multi-ColorPicker by skydoves'
     website = 'https://github.com/skydoves/Multi-ColorPicker'
     issueTracker = "${website}/issues"
@@ -15,11 +15,11 @@ publish {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
