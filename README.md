@@ -1,4 +1,6 @@
 # Multi-ColorPicker
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <br>
 You can get colors from your gallery pictures or custom images just using touch with multi-selectors.
 
 ![gif0](https://user-images.githubusercontent.com/24237865/32027700-71c27e7a-ba25-11e7-80ab-37abe1a3f4b1.gif)
@@ -9,13 +11,13 @@ You can get colors from your gallery pictures or custom images just using touch 
 
 ## Including in your project
 #### build.gradle
-```java
+```gradle
 repositories {
-  mavenCentral() // or jcenter() works as well
+    mavenCentral() // or jcenter() works as well
 }
 
 dependencies {
-  compile "com.github.skydoves:multicolorpicker:1.0.7"
+    implementation "com.github.skydoves:multicolorpicker:1.0.8"
 }
 ```
 
@@ -24,7 +26,7 @@ dependencies {
 <dependency>
   <groupId>com.github.skydoves</groupId>
   <artifactId>multicolorpicker</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
 </dependency>
 ```
 
@@ -34,12 +36,12 @@ You can use like using just ImageView and you can get colors from any images.
 #### Add XML Namespace
 First add below XML Namespace inside your XML layout file.
 
-```xml
+```gradle
 xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 #### ColorPickerView in layout
-```xml
+```gradle
 <com.skydoves.multicolorpicker.MultiColorPickerView
         android:id="@+id/multiColorPickerView"
         android:layout_width="300dp"
@@ -48,7 +50,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 #### Attribute in xml
-```
+```gradle
 app:palette="@drawable/palette" // set palette image
 ```
 
